@@ -1,0 +1,37 @@
+--Create a retail store database
+
+CREATE TABLE feed_store (id INTEGER PRIMARY KEY, name TEXT, retail_price INTEGER, profit_per_item INTEGER, store_cost INTEGER, quantity_sold INTEGER, profit_per_category INTEGER);
+
+INSERT INTO feed_store VALUES
+(1, "horse_food", 200, 50, 150, 4, 200),
+(2, "chicken_food", 50, 10, 40, 30, 300),
+(3, "dog_food", 50, 20, 30, 30, 600),
+(4, "cat_food", 35, 10, 25, 15, 150),
+(5, "reptile_food", 20, 8, 12, 1, 8),
+(6, "pig_food", 40, 16, 24, 6, 96),
+(7, "fish_food", 19, 7, 12, 9, 63),
+(8, "dog treats", 22, 6, 16, 2, 12),
+(9, "rabbit_food", 38, 11, 27, 4, 44),
+(10, "bear_food", 152, 27, 125, 0, 0),
+(11, "wolf_food", 103, 19, 84, 1, 19),
+(12, "tiger_food", 89, 14, 75, 4, 56),
+(13, "panda_food", 259, 68, 191, 2, 136),
+(14, "zebra_food", 194, 41, 153, 11, 451),
+(15, "giraffe_food", 359, 22, 337, 6, 132);
+
+--display the database ordered by price.
+SELECT * FROM feed_store 
+ORDER BY retail_price;
+
+--What is the total profit the store made?
+SELECT SUM(profit_per_category) FROM feed_store;
+
+What product makes the most profit per item?
+SELECT * FROM feed_store
+ORDER BY profit_per_item desc
+Limit 1
+
+What 5 items are most popular?
+SELECT * FROM feed_store
+ORDER BY quantity_sold desc
+LIMIT 5
